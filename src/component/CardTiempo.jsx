@@ -16,7 +16,6 @@ const CardTiempo = ({ temperatura, viento, clima, lugarUbicado }) => {
             <Col xs={6} className="d-flex">
               <Image
                 src={"src/assets/iconList/" + clima.icon + ".png"}
-                // src="src/assets/iconList/02d.png"
                 rounded
                 className="d-none d-sm-flex"
               ></Image>
