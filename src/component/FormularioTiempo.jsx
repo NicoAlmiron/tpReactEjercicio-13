@@ -10,12 +10,6 @@ const FormularioTiempo = () => {
   const [clima, setClima] = useState({});
   const [lugarUbicado, setLugarUbicado] = useState({});
 
-  // (/\s/g) solo busca espacion en blanco
-  // (/\b\w/g) solo busca la primera letra de cada palabra
-
-  // useEffect(() => {
-  // }, [ubicacion]);
-
   const consultarTemp = async (lugar) => {
     try {
       const llamadaTemp =
@@ -30,9 +24,6 @@ const FormularioTiempo = () => {
       setViento(temp.wind);
       setClima(temp.weather[0]);
 
-      console.log(llamadaTemp);
-
-      console.log(temp);
       setSpinner(false);
     } catch (error) {
       console.log(error);
@@ -41,7 +32,6 @@ const FormularioTiempo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(ubicacion);
     if (ubicacion !== "") {
       consultarApi();
     } else {
@@ -64,8 +54,6 @@ const FormularioTiempo = () => {
       const lugar = await respuesta.json();
 
       if (lugar.length > 0) {
-        console.log("se puede buscar la temperature");
-        console.log(lugar[0]);
         setLugarUbicado(lugar[0]);
         consultarTemp(lugar);
       } else {
