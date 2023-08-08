@@ -15,7 +15,10 @@ const CardTiempo = ({ temperatura, viento, clima, lugarUbicado }) => {
           <Row className="flex-column flex-md-row justify-content-center align-items-center">
             <Col xs={6} className="d-flex">
               <Image
-                src={"src/assets/iconList/" + clima.icon + ".png"}
+                //"http://openweathermap.org/img/wn/" + + "@2x.png"
+                src={
+                  "http://openweathermap.org/img/wn/" + clima.icon + "@2x.png"
+                }
                 rounded
                 className="d-none d-sm-flex"
               ></Image>
